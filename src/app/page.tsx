@@ -35,6 +35,11 @@ export default function Home() {
       </div>
 
       <div className="mx-auto max-w-6xl px-6 py-16">
+        {/* ✅ Bloque de PRUEBA de Tailwind (quitar luego) */}
+        <div className="mb-6 rounded-xl bg-pink-500 p-6 text-center text-white shadow-lg">
+          Tailwind funcionando 💅 (bloque de prueba)
+        </div>
+
         {/* Badge superior */}
         <div className="mx-auto w-fit rounded-full border border-white/15 bg-white/5 px-4 py-1 text-sm text-white/80 backdrop-blur">
           ArqWeb — Agente Web & Apps
@@ -43,7 +48,11 @@ export default function Home() {
         {/* Hero */}
         <header className="mx-auto mt-6 max-w-3xl text-center">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
-            Hola <span className="text-transparent bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400 bg-clip-text animate-[gradient-x_12s_ease_infinite]">Marwinth</span> 🚀
+            Hola{" "}
+            <span className="text-transparent bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400 bg-clip-text animate-[gradient-x_12s_ease_infinite]">
+              Marwinth
+            </span>{" "}
+            🚀
           </h1>
           <p className="mt-4 text-lg text-white/80">
             Base con Next.js + TypeScript + Tailwind. Lista para construir una UI moderna,
