@@ -2,83 +2,75 @@ import Link from "next/link";
 
 export const metadata = {
   title: "ArqWeb — Agente Web & Apps",
-  description:
-    "Base con Next.js + TypeScript + Tailwind. Lista para construir una UI moderna, con buen SEO y despliegues automáticos en Vercel.",
+  description: "Sitio base con Next.js + TypeScript + Tailwind",
 };
 
 export default function Home() {
-  const features = [
-    { title: "Next.js + TS", desc: "App Router, tipado estricto y performance por defecto." },
-    { title: "Tailwind CSS", desc: "Estilos utilitarios, diseño responsivo y dark mode sin dolor." },
-    { title: "UI moderna", desc: "Glassmorphism, sombras suaves, gradientes y microanimaciones." },
-    { title: "SEO listo", desc: "Metadatos en layout, fuentes optimizadas y buenas prácticas." },
-    { title: "Deploy continuo", desc: "Cada git push se despliega automáticamente en Vercel." },
-    { title: "Escalable", desc: "Organiza por módulos, agrega páginas y APIs cuando quieras." },
-  ];
-
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white">
-      {/* Fondos simples (sin animaciones para mantenerlo estable) */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-indigo-500/20 blur-3xl" />
-        <div className="absolute -bottom-28 -right-24 h-72 w-72 rounded-full bg-fuchsia-500/20 blur-3xl" />
-      </div>
+    <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white flex flex-col items-center justify-center px-6">
+      {/* Hero */}
+      <section className="text-center space-y-6">
+        <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
+          Bienvenido a <span className="text-pink-500">ArqWeb</span> 🚀
+        </h1>
+        <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+          Base con <span className="font-semibold">Next.js + TypeScript + Tailwind</span>. 
+          Lista para construir una UI moderna, escalable y con SEO optimizado.
+        </p>
 
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        {/* Badge superior */}
-        <div className="mx-auto w-fit rounded-full border border-white/15 bg-white/5 px-4 py-1 text-sm text-white/80 backdrop-blur">
-          ArqWeb — Agente Web & Apps
+        <div className="flex flex-wrap gap-4 justify-center mt-6">
+          <Link
+            href="/docs"
+            className="px-6 py-3 rounded-xl bg-pink-600 hover:bg-pink-700 transition font-semibold shadow-lg"
+          >
+            📘 Documentación
+          </Link>
+          <Link
+            href="/contact"
+            className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition font-semibold shadow-lg"
+          >
+            ✉️ Contáctanos
+          </Link>
         </div>
+      </section>
 
-        {/* Hero */}
-        <header className="mx-auto mt-6 max-w-3xl text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">Hola Marwinth 🚀</h1>
-          <p className="mt-4 text-lg text-white/80">
-            Base con Next.js + TypeScript + Tailwind. Lista para construir una UI moderna,
-            con buen SEO y despliegues automáticos en Vercel.
-          </p>
-
-          {/* CTAs */}
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            {/* Interno → usa Link para evitar el error de ESLint */}
-            <Link
-              href="/twcheck"
-              className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 font-medium text-white shadow-lg shadow-blue-600/25 transition hover:bg-blue-500"
-            >
-              Empezar ahora ✨
-            </Link>
-
-            {/* Externo → <a> normal */}
-            <a
-              href="https://github.com/marwinthmata2/arqweb-app"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-lg border border-white/20 px-6 py-3 text-white/90 transition hover:border-white/40"
-            >
-              Ver repositorio ↗
-            </a>
+      {/* Features */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 w-full max-w-5xl">
+        {[
+          {
+            title: "⚡ Next.js + TS",
+            desc: "App Router, tipado estricto y performance por defecto.",
+          },
+          {
+            title: "🎨 Tailwind CSS",
+            desc: "Estilos rápidos, responsive y dark mode integrado.",
+          },
+          {
+            title: "✨ UI moderna",
+            desc: "Gradientes, glassmorphism y micro-animaciones.",
+          },
+          {
+            title: "🔍 SEO listo",
+            desc: "Metadatos, fuentes optimizadas y buenas prácticas.",
+          },
+          {
+            title: "🚀 Deploy continuo",
+            desc: "Cada git push se despliega en Vercel automáticamente.",
+          },
+          {
+            title: "📈 Escalable",
+            desc: "Organiza módulos, agrega páginas y APIs fácilmente.",
+          },
+        ].map((f, i) => (
+          <div
+            key={i}
+            className="p-6 rounded-2xl bg-gray-800/70 border border-gray-700 hover:border-pink-500 transition"
+          >
+            <h3 className="text-xl font-semibold mb-2">{f.title}</h3>
+            <p className="text-gray-400">{f.desc}</p>
           </div>
-        </header>
-
-        {/* Grid de tarjetas */}
-        <section className="mx-auto mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((f) => (
-            <div
-              key={f.title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_8px_40px_-12px_rgba(59,130,246,0.15)] backdrop-blur transition hover:border-white/20"
-            >
-              <h3 className="text-lg font-semibold">{f.title}</h3>
-              <p className="mt-2 text-white/75">{f.desc}</p>
-              <Link
-                href="/test"
-                className="mt-4 inline-flex items-center text-sm font-medium text-sky-300 hover:text-sky-200"
-              >
-                Más información →
-              </Link>
-            </div>
-          ))}
-        </section>
-      </div>
+        ))}
+      </section>
     </main>
   );
 }
