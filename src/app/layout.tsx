@@ -1,9 +1,12 @@
 export const metadata = {
-  title: "ArqWeb",
-  description: "Base con Next.js + TS + Tailwind",
+  title: "ArqWeb — Agente Web & Apps",
+  description:
+    "Base con Next.js + TypeScript + Tailwind. Lista para construir una UI moderna, escalable y con SEO optimizado.",
 };
 
-import "./globals.css";
+import "../app/globals.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function RootLayout({
   children,
@@ -12,8 +15,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <head />
-      <body>{children}</body>
+      <body className="bg-slate-950 text-slate-100 antialiased min-h-screen">
+        {/* Header fijo arriba */}
+        <Header />
+
+        {/* Contenido principal */}
+        <main className="mx-auto max-w-6xl px-4 sm:px-6 py-10">{children}</main>
+
+        {/* Footer */}
+        <Footer />
+      </body>
     </html>
   );
 }
